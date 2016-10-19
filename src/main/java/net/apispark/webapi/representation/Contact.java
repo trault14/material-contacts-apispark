@@ -18,6 +18,16 @@ public class Contact implements Serializable {
     private Integer rank;
     private String companyId;
 
+    public String getGender() {
+        return gender;
+    }
+
+    public void setGender(String gender) {
+        this.gender = gender;
+    }
+
+    private String gender;
+
     public Contact(){}
 
     public Contact(String id, String firstName, String lastName, String avatar) {
