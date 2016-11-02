@@ -30,4 +30,14 @@ public class ContactPersistenceTest {
         Assert.assertEquals(added, retrieved);
 
     }
+
+    @Test
+    public void failing_added_contact_is_well_retrieved_by_id() throws Exception {
+        Contact contact = new Contact(null, "Zinedine", "Zidane", "svg-1", "Male");
+        Contact added = ContactPersistence.INSTANCE.addContact(contact);
+        Contact retrieved = ContactPersistence.INSTANCE.getContact(added.getId());
+        Assert.assertNotEquals(added, retrieved);
+
+    }
+
 }
